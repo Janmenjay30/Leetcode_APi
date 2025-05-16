@@ -99,7 +99,8 @@ app.get('/stats/:username', async (req, res) => {
     
     // Check cache first
     const cachedStats = statsCache.get(username);
-    if (cachedStats) {
+    if (cachedStats) { 
+        console.log('Cache hit for:', username);
         return res.json(cachedStats);
     }
 
